@@ -4,9 +4,9 @@ if (!isset($_SESSION['userLogin'])) {
     header("Location: login-form-2.php");
 }
 
-define('DB_HOST', "database1.cfs6wemgo5yu.us-east-1.rds.amazonaws.com");
+define('DB_HOST', "database1.cbmbzzl5tbg9.us-east-1.rds.amazonaws.com");
 define('DB_USER', "admin");
-define('DB_PASS', "Abcd1234");
+define('DB_PASS', "Assm1234");
 define('DB_NAME', "database1");
 define('DB_PORT', "3306");
 ?>
