@@ -4,7 +4,7 @@ if (!isset($_SESSION['userLogin'])) {
     header("Location: login-form-2.php");
 }
 // Connect to database
-$conn = new mysqli('database1.cfs6wemgo5yu.us-east-1.rds.amazonaws.com', 'admin', 'Abcd1234', 'database1', '3306');
+$conn = new mysqli('database1.cbmbzzl5tbg9.us-east-1.rds.amazonaws.com', 'admin', 'Assm1234', 'database1', '3306');
 
 if (isset($_POST['action']) && $_POST['action'] == 'delete') {
     $orderId = $_POST['id'];
