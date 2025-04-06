@@ -1,8 +1,8 @@
 <link href="../Css/event-admin.css" rel="stylesheet" type="text/css"/>
 <?php
-define('DB_HOST', "database1.cfs6wemgo5yu.us-east-1.rds.amazonaws.com");
+define('DB_HOST', "databaseassm.cbmbzzl5tbg9.us-east-1.rds.amazonaws.comm");
 define('DB_USER', "admin");
-define('DB_PASS', "Abcd1234");
+define('DB_PASS', "Assm1234");
 define('DB_NAME', "database1");
 define('DB_PORT', "3306");
 
