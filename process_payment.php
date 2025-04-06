@@ -79,7 +79,7 @@ function generatePaymentID() {
                             $prices = $_POST['prices'];
                             $orderIds = $_POST['orderid'];
 
-                            $con = new mysqli('database1.cfs6wemgo5yu.us-east-1.rds.amazonaws.com', 'admin', 'Abcd1234', 'database1', '3306');
+                            $con = new mysqli('database1.cbmbzzl5tbg9.us-east-1.rds.amazonaws.com', 'admin', 'Assm1234', 'database1', '3306');
                             if ($con->connect_error) {
                                 die("Connection failed: " . $con->connect_error);
                             }
