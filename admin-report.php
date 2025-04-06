@@ -31,7 +31,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
                     <div class="card1">
                         <?php
                         //connect to sql
-                        $con = new mysqli('database1.cfs6wemgo5yu.us-east-1.rds.amazonaws.com', 'admin', 'Abcd1234', 'database1', '3306');
+                        $con = new mysqli('database1.cbmbzzl5tbg9.us-east-1.rds.amazonaws.com', 'admin', 'Assm1234', 'database1', '3306');
 
                         //perform query
                         $sql = "SELECT SUM(Quantity) AS TotalQuantity FROM `order` WHERE Event = 'Basketball'";
