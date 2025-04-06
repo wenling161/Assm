@@ -4,7 +4,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
-define('DB_HOST', "databaseassm.cbmbzzl5tbg9.us-east-1.rds.amazonaws.com");
+define('DB_HOST', "database1.cbmbzzl5tbg9.us-east-1.rds.amazonaws.com");
 define('DB_USER', "admin");
 define('DB_PASS', "Assm1234");
 define('DB_NAME', "database1");
