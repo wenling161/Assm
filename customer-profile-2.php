@@ -119,7 +119,7 @@ define('DB_PORT', "3306");
                              class="card-img-top" alt="Profile Picture">
                         <div class="card-body">
                             <?php
-                            $conn = new mysqli('database1.cfs6wemgo5yu.us-east-1.rds.amazonaws.com', 'admin', 'Abcd1234', 'database1', '3306');
+                            $conn = new mysqli('database1.cbmbzzl5tbg9.us-east-1.rds.amazonaws.com', 'admin', 'Assm1234', 'database1', '3306');
                             $studentid = $_SESSION['studentId'];
                             $stmt = $conn->prepare("SELECT * FROM member WHERE studentid = ?");
                             $stmt->bind_param("s", $studentid);
