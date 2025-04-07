@@ -70,40 +70,6 @@ INSERT INTO `member` (`studentid`, `fullname`, `email`, `gender`, `phonenumber`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `order`
---
-
-CREATE TABLE `order` (
-  `OrderID` varchar(10) NOT NULL,
-  `Name` varchar(30) NOT NULL,
-  `StudentID` varchar(30) NOT NULL,
-  `Email` varchar(50) NOT NULL,
-  `Gender` char(1) NOT NULL,
-  `PhoneNumber` varchar(20) NOT NULL,
-  `PriceAmount` int(2) NOT NULL,
-  `Event` varchar(30) NOT NULL,
-  `Quantity` int(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `order`
---
-
-INSERT INTO `order` (`OrderID`, `Name`, `StudentID`, `Email`, `Gender`, `PhoneNumber`, `PriceAmount`, `Event`, `Quantity`) VALUES
-('o1', 'Alvin Leow Chun Chao', '21PMD10277', 'alvinicc-pm21@student.tarc.edu.my', 'M', '0188867943', 5, 'Running', 1),
-('o10', 'Teoh Ming Hui', '22PBD07345', 'teohmh-pb22@student.tarc.edu.my', 'F', '0166688912', 5, 'Gym', 1),
-('o2', 'Lim Sze Mei', ' 21PBD07332', 'limsm-pb21@sludenl.tarc.edu.my', 'F', '0125678947', 10, 'Basketball', 1),
-('o3', 'Chan Zhi Khang', '21PBD07683', 'chanzk-pb21@sludent.tarc.edu.my', 'M', '01118943864', 10, 'Bowling', 1),
-('o4', 'Kwek Rou Yu', '21PBD09064', 'kwekry-pb21@sludent.tarc.edu.my', 'F', '0168899988', 5, 'Running', 1),
-('o5', 'Joey Low Lee Joe', ' 21PBD09789', 'joeyllj-pb21@student.tarc.edu.my', 'F', '0162345292', 5, 'Gym', 1),
-('o6', 'Yeoh Zhi Chuin', '21PMD09348', 'yeohzc-pm21@student.tarc.edu.my', 'F', '0124568612', 10, 'Basketball', 1),
-('o7', 'Ng Kai Wen', '22PMD07894', 'ngkw-pm22@student.tarc.edu.my', 'F', '0162469252', 5, 'Running', 1),
-('o8', 'Ng Hong Ze', '22PMD07994', 'nghz-pm22@student.tarc.edu.my', 'M', '0168889898', 10, 'Gym', 1),
-('o9', 'Tan Yee Thern', '22PMD09586', 'tanyt-pm22@student.tarc.edu.my', 'F', '016789456', 5, 'Gym', 1);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `payment`
 --
 
@@ -215,80 +181,68 @@ INSERT INTO `staff` (`staffID`, `staffName`, `staffEmail`, `staffPH`, `staffGend
 
 -- --------------------------------------------------------
 
---
--- Table structure for table `student`
---
-
-CREATE TABLE `student` (
-  `Name` varchar(30) NOT NULL,
-  `Course` char(2) NOT NULL,
-  `StudentID` varchar(10) NOT NULL,
-  `Gender` char(1) NOT NULL,
-  `Email` varchar(50) NOT NULL,
-  `PhoneNumber` varchar(20) NOT NULL,
-  `Event` char(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `student`
---
-
-INSERT INTO `student` (`Name`, `Course`, `StudentID`, `Gender`, `Email`, `PhoneNumber`, `Event`) VALUES
-('Wong Junyi', 'AC', '22PMD00007', 'M', 'junyi@gmail.com', '0194430012', 'BL'),
-('Wong Yunqi', 'IS', '22PMD01311', 'F', 'qiqiwong@gmail.com', '01234567', 'RN');
-
---
--- Indexes for dumped tables
---
-
---
 -- Indexes for table `cart`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`orderid`);
 
 --
+--
+ALTER TABLE `cart` 
+  ADD CONSTRAINT `fk_student_cart` 
+  FOREIGN KEY (`studentid`) 
+  REFERENCES `member`(`studentid`);
+--
+--
+ALTER TABLE `cart` 
+  ADD CONSTRAINT `fk_product_cart` 
+  FOREIGN KEY (`product_id`) 
+  REFERENCES `product`(`product_id`);
+--
+
 -- Indexes for table `member`
 --
 ALTER TABLE `member`
   ADD PRIMARY KEY (`studentid`);
 
 --
--- Indexes for table `order`
---
-ALTER TABLE `order`
-  ADD PRIMARY KEY (`OrderID`);
 
---
 -- Indexes for table `payment`
 --
 ALTER TABLE `payment`
   ADD PRIMARY KEY (`paymentid`);
-
 --
+--
+ALTER TABLE `payment` 
+  ADD CONSTRAINT `fk_student_payment` 
+  FOREIGN KEY (`studentid`) 
+  REFERENCES `member`(`studentid`);
+--
+
 -- Indexes for table `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`product_id`);
 
 --
+
 -- Indexes for table `review`
 --
 ALTER TABLE `review`
   ADD PRIMARY KEY (`ReviewID`);
-
 --
+--
+ALTER TABLE `review` 
+  ADD CONSTRAINT `fk_student_review` 
+  FOREIGN KEY (`studentid`) 
+  REFERENCES `member`(`studentid`);
+--
+
 -- Indexes for table `staff`
 --
 ALTER TABLE `staff`
   ADD PRIMARY KEY (`staffID`);
 
---
--- Indexes for table `student`
---
-ALTER TABLE `student`
-  ADD PRIMARY KEY (`StudentID`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
