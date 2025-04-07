@@ -132,55 +132,6 @@ INSERT INTO `product` (`product_id`, `product_name`, `product_description`, `pro
 
 -- --------------------------------------------------------
 
---
--- Table structure for table `review`
---
-
-CREATE TABLE `review` (
-  `ReviewID` varchar(30) NOT NULL,
-  `StudentID` varchar(30) NOT NULL,
-  `Name` varchar(30) NOT NULL,
-  `Event` varchar(20) NOT NULL,
-  `Categories` varchar(60) NOT NULL,
-  `StarRate` int(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `review`
---
-
-INSERT INTO `review` (`ReviewID`, `StudentID`, `Name`, `Event`, `Categories`, `StarRate`) VALUES
-('1', '21PBD07332', 'Lim Sze Mei', '🤸Gym', 'Worker Attitude(Customer Service)', 4),
-('3', '22PMD09999', 'CHUNG LI YI', '🎳Bowling', 'Worker Attitude(Customer Service)', 5),
-('4', '21PBD07332', 'Lim Sze Mei', '🎳Bowling', 'Worker Responsive(Customer Service)', 5),
-('5', '21PBD07332', 'Lim Sze Mei', '🏃️Running', 'Overall Experience', 3);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `staff`
---
-
-CREATE TABLE `staff` (
-  `staffID` varchar(30) NOT NULL,
-  `staffName` varchar(40) NOT NULL,
-  `staffEmail` varchar(70) NOT NULL,
-  `staffPH` varchar(13) NOT NULL,
-  `staffGender` varchar(6) NOT NULL,
-  `staffPass` varchar(40) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `staff`
---
-
-INSERT INTO `staff` (`staffID`, `staffName`, `staffEmail`, `staffPH`, `staffGender`, `staffPass`) VALUES
-('1', 'CHUNG LI YI', 'abc123@gmail.com', '01262511111', 'F', 'password1'),
-('2', 'CHUNG LI JING', 'abc123@gmail.com', '0123456', 'F', 'password2'),
-('3', 'CHUNG LI LING', 'abc123@gmail.com', '0123456', 'F', 'password3');
-
--- --------------------------------------------------------
-
 -- Indexes for table `cart`
 --
 ALTER TABLE `cart`
@@ -225,23 +176,6 @@ ALTER TABLE `product`
   ADD PRIMARY KEY (`product_id`);
 
 --
-
--- Indexes for table `review`
---
-ALTER TABLE `review`
-  ADD PRIMARY KEY (`ReviewID`);
---
---
-ALTER TABLE `review` 
-  ADD CONSTRAINT `fk_student_review` 
-  FOREIGN KEY (`studentid`) 
-  REFERENCES `member`(`studentid`);
---
-
--- Indexes for table `staff`
---
-ALTER TABLE `staff`
-  ADD PRIMARY KEY (`staffID`);
 
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
