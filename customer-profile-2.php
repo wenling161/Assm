@@ -4,7 +4,7 @@ if (!isset($_SESSION['userLogin'])) {
     header("Location: login-form-2.php");
 }
 
-define('DB_HOST', "database1.cbmbzzl5tbg9.us-east-1.rds.amazonaws.com");
+define('DB_HOST', "database1.csfo2nqxkbmj.us-east-1.rds.amazonaws.com");
 define('DB_USER', "admin");
 define('DB_PASS', "Assm1234");
 define('DB_NAME', "database1");
@@ -119,7 +119,7 @@ define('DB_PORT', "3306");
                              class="card-img-top" alt="Profile Picture">
                         <div class="card-body">
                             <?php
-                            $conn = new mysqli('database1.cbmbzzl5tbg9.us-east-1.rds.amazonaws.com', 'admin', 'Assm1234', 'database1', '3306');
+                            $conn = new mysqli('database1.csfo2nqxkbmj.us-east-1.rds.amazonaws.com', 'admin', 'Assm1234', 'database1', '3306');
                             $studentid = $_SESSION['studentId'];
                             $stmt = $conn->prepare("SELECT * FROM member WHERE studentid = ?");
                             $stmt->bind_param("s", $studentid);
@@ -144,7 +144,7 @@ define('DB_PORT', "3306");
                         </div>
                         <ul class="list-group list-group-flush">
                             <?php
-                            $conn = new mysqli('database1.cbmbzzl5tbg9.us-east-1.rds.amazonaws.com', 'admin', 'Assm1234', 'database1', '3306');
+                            $conn = new mysqli('database1.csfo2nqxkbmj.us-east-1.rds.amazonaws.com', 'admin', 'Assm1234', 'database1', '3306');
                             $studentid = $_SESSION['studentId'];
                             $stmt = $conn->prepare("SELECT * FROM member WHERE studentid = ?");
                             $stmt->bind_param("s", $studentid);
@@ -174,7 +174,7 @@ define('DB_PORT', "3306");
                         <div class="card-body">
                             <form action="customer-profile-2.php" method="post">
                                 <?php
-                                $conn = new mysqli('database1.cbmbzzl5tbg9.us-east-1.rds.amazonaws.com', 'admin', 'Assm1234', 'database1', '3306');
+                                $conn = new mysqli('database1.csfo2nqxkbmj.us-east-1.rds.amazonaws.com', 'admin', 'Assm1234', 'database1', '3306');
                                 $studentid = $_SESSION['studentId'];
                                 $stmt = $conn->prepare("SELECT * FROM member WHERE studentid = ?");
                                 $stmt->bind_param("s", $studentid);
