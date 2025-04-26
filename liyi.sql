@@ -138,12 +138,14 @@ ALTER TABLE `cart`
   ADD PRIMARY KEY (`orderid`);
 
 --
+CREATE INDEX idx_studentid ON member(studentid);
 --
 ALTER TABLE `cart`
   ADD CONSTRAINT `fk_student_cart`
   FOREIGN KEY (`studentid`)
   REFERENCES `member`(`studentid`);
 --
+CREATE INDEX idx_product_id ON product(product_id);
 --
 ALTER TABLE `cart` 
   ADD CONSTRAINT `fk_product_cart` 
@@ -155,7 +157,6 @@ ALTER TABLE `cart`
 --
 ALTER TABLE `member`
   ADD PRIMARY KEY (`studentid`);
-
 --
 
 -- Indexes for table `payment`
