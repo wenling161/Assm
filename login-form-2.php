@@ -31,7 +31,7 @@
 <?php include 'header-2.php' ?>
     <?php
         session_start(); // start the <session></session>
-        $conn = new mysqli('database1.cbmbzzl5tbg9.us-east-1.rds.amazonaws.com', 'admin', 'Assm1234', 'database1', '3306');
+        $conn = new mysqli('database1.csfo2nqxkbmj.us-east-1.rds.amazonaws.com', 'admin', 'Assm1234', 'database1', '3306');
 
         if (isset($_POST['login'])) {
 
