@@ -30,7 +30,7 @@ define('DB_PORT', "3306");
         <?php include 'header-2.php' ?>
         <div class="container mt-5">
             <?php
-            require_once './config/yunqing.php';
+            require_once './config/helper2.php';
             if (isset($_POST['submitProfile'])) {
                 $studentId = $_POST['studentid'];
                 $fullname = isset($_POST['fullname']) ? trim($_POST['fullname']) : "";
