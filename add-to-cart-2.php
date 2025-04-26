@@ -7,7 +7,7 @@ $studentID = $_GET['studentID'];
 $addQuantity = $_GET['quantity'];
 // connect to the database
 
-$conn = new mysqli('database1.cbmbzzl5tbg9.us-east-1.rds.amazonaws.com', 'admin', 'Assm1234', 'database1', '3306');
+$conn = new mysqli('database1.csfo2nqxkbmj.us-east-1.rds.amazonaws.com', 'admin', 'Assm1234', 'database1', '3306');
 
 // check if the item is already in the cart for the current user
 $cart_query = "SELECT * FROM cart WHERE product_id = ? AND studentid = ?";
