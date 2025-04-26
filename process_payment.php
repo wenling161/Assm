@@ -7,7 +7,7 @@ if (!isset($_SESSION['userLogin'])) {
 }
 
 function generatePaymentID() {
-    $con = new mysqli('database1.cbmbzzl5tbg9.us-east-1.rds.amazonaws.com', 'admin', 'Assm1234', 'database1', '3306');
+    $con = new mysqli('database1.csfo2nqxkbmj.us-east-1.rds.amazonaws.com', 'admin', 'Assm1234', 'database1', '3306');
 
     if (!$con) {
         die("Connection failed: " . mysqli_connect_error());
@@ -79,7 +79,7 @@ function generatePaymentID() {
                             $prices = $_POST['prices'];
                             $orderIds = $_POST['orderid'];
 
-                            $con = new mysqli('database1.cbmbzzl5tbg9.us-east-1.rds.amazonaws.com', 'admin', 'Assm1234', 'database1', '3306');
+                            $con = new mysqli('database1.csfo2nqxkbmj.us-east-1.rds.amazonaws.com', 'admin', 'Assm1234', 'database1', '3306');
                             if ($con->connect_error) {
                                 die("Connection failed: " . $con->connect_error);
                             }
