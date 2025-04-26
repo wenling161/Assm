@@ -139,9 +139,9 @@ ALTER TABLE `cart`
 
 --
 --
-ALTER TABLE `cart` 
-  ADD CONSTRAINT `fk_student_cart` 
-  FOREIGN KEY (`studentid`) 
+ALTER TABLE `cart`
+  ADD CONSTRAINT `fk_student_cart`
+  FOREIGN KEY (`studentid`)
   REFERENCES `member`(`studentid`);
 --
 --
